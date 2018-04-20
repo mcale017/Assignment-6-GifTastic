@@ -96,27 +96,23 @@ $("#add-sport").on("click", function(event) {
 $(document).on("click", ".sport-button", displaySport);
 
 // Adding a click event listener to all elements with a class of gif
-$(".gif").on("click", function(event) {
+$("#gifs").on("click", ".gif", function(event) {
     // Storing the state of the gif
     var state = $(this).attr("data-state");
 
-    console.log("gif clicked")
     // If the gif is in still data-state
     if (state === "still") {
         // Setting the data-state to animate
-        console.log("this gif is still");
         $(this).attr("src", $(this).attr("data-animate"));
         $(this).attr("data-state", "animate");
     }
     // If the gif is in animate data-state
     else {
-        console.log("this gif is animated");
         // Setting the data-state to still
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");
     }
 });
-// Need to figure out how to get the image to respond when it's clicked on....
 
 // Calling renderButtons to display the initial buttons
 renderButtons();
