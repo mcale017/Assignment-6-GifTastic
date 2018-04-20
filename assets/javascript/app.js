@@ -1,5 +1,5 @@
 // Initialize array of sports
-var sports = ["Football", "Ice Hockey", "Soccer", "Baseball", "Basketball", "Volleyball"]
+var sports = ["football", "ice hockey", "soccer", "baseball", "basketball", "volleyball"]
 
 
 // displaySports function renders the HTML

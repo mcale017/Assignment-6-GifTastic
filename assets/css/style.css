@@ -1,0 +1,17 @@
+body {
+    background: url(../images/background.jpg);
+    background-position: center bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sport-button {
+    background-color: #11BBFF;
+    color: #ffffff;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 10px;
+    border: none;
+    font-size: 25px;
+}
