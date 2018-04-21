@@ -17,17 +17,11 @@ function displaySport() {
     }).then(function(mySport) {
         // For loop for all 10 gifs
         for (var i = 0; i < 10; i++) {
-            // Creating a div to hold that sport's gifs
-            var sportDiv = $("<div class='sport'>");
+            // Creating a div to hold the thumbnail
+            var sportDiv = $("<div class='col-lg-6 sport'>");
 
-            // Storing the rating of the gif
-            var rating = mySport.data[i].rating;
-
-            // Creating an element to have the rating displayed
-            var sportDivrating = $("<p>").text("Rating: " + rating);
-
-            // Appending the rating to sportDiv
-            sportDiv.append(sportDivrating);
+            // Creating a div to create the thumbnail
+            var sportThumbnail = $("<div class='thumbnail'>");
 
             // Storing the still gif
             var gifStillURL = mySport.data[i].images.original_still.url;
@@ -44,8 +38,35 @@ function displaySport() {
                 class: "gif",
             });
 
-            // Appending the gif to sportDiv
-            sportDiv.append(gif);
+            // Appending the gif to sportThumbnail
+            sportThumbnail.append(gif);
+
+            // Creating the caption div
+            var sportCaption = $("<div class='caption'>");
+
+            // Storing the title of the gif
+            var title = mySport.data[i].title;
+
+            // Creating an element to have the title displayed
+            var sportTitle = $("<h4>").text("Title: " + title);
+
+            // Appending the title to the caption
+            sportCaption.append(sportTitle);
+
+            // Storing the rating of the gif
+            var rating = mySport.data[i].rating;
+
+            // Creating an element to have the rating displayed
+            var sportRating = $("<p>").text("Rating: " + rating);
+
+            // Appending the rating to the caption
+            sportCaption.append(sportRating);
+
+            // Appending the caption to the thumbnail
+            sportThumbnail.append(sportCaption);
+
+            // Appending the thumbnail to sportDiv
+            sportDiv.append(sportThumbnail);
 
             // Putting the entire sportDiv above the previous sports
             $("#gifs").prepend(sportDiv);
