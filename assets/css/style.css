@@ -24,7 +24,24 @@ body {
     color: #ffffff;
 }
 
-/* trying to figure out how to not have columns stack when it's floated and this seemed to help */
+#add-sport {
+    background-color: #c51230;
+    color: #ffffff;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 10px;
+    border: none;
+    font-size: 25px;
+}
+
+#gifs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* trying to figure out how to not have columns stack when it's floated and this seemed to help
+so whatever is above actually works better than this
 #gifs .col-lg-6:nth-child(odd) {
     clear: both;
-}
+}*/
