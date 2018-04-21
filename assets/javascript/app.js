@@ -48,7 +48,7 @@ function displaySport() {
             var title = mySport.data[i].title;
 
             // Creating an element to have the title displayed
-            var sportTitle = $("<h4>").text("Title: " + title);
+            var sportTitle = $("<h3>").text(title);
 
             // Appending the title to the caption
             sportCaption.append(sportTitle);
@@ -61,6 +61,15 @@ function displaySport() {
 
             // Appending the rating to the caption
             sportCaption.append(sportRating);
+
+            // Storing the date of the gif
+            var date = mySport.data[i].import_datetime;
+
+            // Creating an element to have the date displayed
+            var sportDate = $("<p>").text("Date: " + date);
+ 
+            // Appending the date to the caption
+            sportCaption.append(sportDate);
 
             // Appending the caption to the thumbnail
             sportThumbnail.append(sportCaption);
@@ -111,6 +120,10 @@ $("#add-sport").on("click", function(event) {
 
     // Calling renderButtons to process the array through the function
     renderButtons();
+
+    /* Alright, I tried to make it so that it would reset, but nothing works.
+    // I'll look back at it sometime in the fuure
+    $("#sport-input").text() = '';*/
 });
 
 // Adding a click event listener to all elements with a class of sport-button
